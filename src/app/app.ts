@@ -64,6 +64,7 @@ export class App {
       const newGuesses = [...this.guesses()];
       newGuesses.push(CHARACTERS[character]);
       this.guesses.set(newGuesses);
+      this.characterQuery.set('');
     }
   }
 
