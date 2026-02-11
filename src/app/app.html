@@ -60,6 +60,7 @@
             <a class="underline hover:cursor-pointer" (click)="openGenderModal()">Gender</a>
           </th>
           <th>Status</th>
+          <th>Blackened</th>
           <th>Height</th>
           <th>Weight</th>
         </tr>
@@ -84,6 +85,7 @@
               {{ character.gender }}
             </td>
             <td [className]="attributeClass(character, 'status')">{{ character.status }}</td>
+            <td [className]="attributeClass(character, 'blackened')">{{ character.blackened }}</td>
             <td [className]="attributeClass(character, 'heightCm')">
               {{ character.heightCm }} cm {{ attributeIcon(character.heightCm, 'heightCm') }}
             </td>
