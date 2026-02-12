@@ -6,15 +6,25 @@
       class="input"
       type="text"
       placeholder="Search characters"
+      [disabled]="gameStatus() !== 'PLAYING'"
       [value]="characterQuery()"
       (input)="characterQuery.set($event.target.value)"
     />
   </div>
-  @if (gameStatus() === 'LOSE') {
-    <h1>GAME OVER</h1>
-  } @else if (gameStatus() === 'WIN') {
-    <h1>Got it! You win!</h1>
-  }
+
+  <app-dialog [open]="gameStatus() !== 'PLAYING'">
+    <div class="flex flex-col justify-center items-center gap-4">
+      @if (gameStatus() === 'LOSE') {
+        <h1 class="text-xl">BAD END</h1>
+      } @else if (gameStatus() === 'WIN') {
+        <h1 class="text-xl">Got it!</h1>
+      }
+      <p class="text-2xl">
+        Answer: <a [href]="answer.link" class="underline hover:text-primary">{{ answer.name }}</a>
+      </p>
+      <img [src]="answer.sprite" />
+    </div>
+  </app-dialog>
 
   <dialog #gender id="gender-modal" class="modal">
     <div class="modal-box">
@@ -40,7 +50,7 @@
       [value]="characterQuery()"
       (input)="characterQuery.set($event.target.value)"
     />
-    <ul class="menu bg-base-200 rounded-box w-full">
+    <ul class="menu bg-base-200 rounded-box w-full max-h-100 overflow-scroll flex-nowrap">
       @for (character of characterOptions(); track character.id) {
         <app-character [data]="character" (selected)="guess(character.id)" />
       }
@@ -57,7 +67,7 @@
           <th>Debut</th>
           <th>Ultimate Talent</th>
           <th>
-            <a class="underline hover:cursor-pointer" (click)="openGenderModal()">Gender</a>
+            <a class="underline hover:cursor-pointer" (click)="openGenderModal()">Gender*</a>
           </th>
           <th>Status</th>
           <th>Blackened</th>
@@ -72,7 +82,9 @@
               <img [src]="character.sprite" class="w-20 h-20" />
             </td>
             <td [className]="attributeClass(character, 'name')">
-              <a class="underline" [href]="character.link" target="_blank">{{ character.name }}</a>
+              <a class="underline hover:text-primary" [href]="character.link" target="_blank">{{
+                character.name
+              }}</a>
             </td>
             <td [className]="attributeClass(character, 'ancestry')">{{ character.ancestry }}</td>
             <td [className]="attributeClass(character, 'debutIn')">

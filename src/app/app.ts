@@ -56,7 +56,7 @@ export class App {
     const results = this.CHARACTERS.filter((c) =>
       c.name.toLowerCase().includes(query.toLowerCase()),
     );
-    return results.slice(0, 5);
+    return results;
   });
 
   public guess(character: CHARACTER | null) {
@@ -97,7 +97,9 @@ export class App {
   }
 
   public getAnswer() {
-    const seed = DateTime.now().startOf('day').toSeconds();
+    const seed = Math.abs(
+      Math.round(DateTime.now().startOf('year').plus({ day: 1 }).diffNow().as('days')),
+    );
     const answerIndex = seed % this.CHARACTERS.length;
     return this.CHARACTERS[answerIndex];
   }
