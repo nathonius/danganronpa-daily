@@ -48,12 +48,14 @@ import { Teruteru } from './teruteru';
 import { Toko } from './toko';
 import { Tsumugi } from './tsumugi';
 import { Yasuhiro } from './yasuhiro';
+import { Chiaki } from './chiaki';
 
 export const CHARACTERS: Record<string, CharacterData> = {
   [Akane.id]: Akane,
   [Angie.id]: Angie,
   [Byakuya.id]: Byakuya,
   [Celestia.id]: Celestia,
+  [Chiaki.id]: Chiaki,
   [Chihiro.id]: Chihiro,
   [Fuyuhiko.id]: Fuyuhiko,
   [Gonta.id]: Gonta,
