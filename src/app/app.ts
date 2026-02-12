@@ -5,6 +5,7 @@ import { Character } from './character/character';
 import { CHARACTER, CHARACTERS } from '../characters';
 import { DateTime } from 'luxon';
 import { Dialog } from './dialog/dialog';
+import { Monokuma } from '../characters/monokuma';
 
 const MAX_GUESSES = 7;
 const ATTRIBUTE_CLASSES = {
@@ -19,6 +20,7 @@ const ATTRIBUTE_CLASSES = {
   templateUrl: './app.html',
 })
 export class App {
+  public readonly Monokuma = Monokuma;
   public readonly CHARACTERS = Object.values(CHARACTERS);
   public readonly GAME = GAME;
   public readonly genderModal = viewChild<ElementRef<HTMLDialogElement>>('gender');

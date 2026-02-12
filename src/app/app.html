@@ -1,5 +1,9 @@
 <main class="m-5">
-  <h1 class="text-center mb-5 text-2xl">Danganrondle - The Danganronpa Daily Game</h1>
+  <div class="flex w-full justify-center items-center mb-5 gap-4">
+    <img class="w-10" [src]="Monokuma.sprite" />
+    <h1 class="text-2xl">Danganrondle - The Danganronpa Daily Game</h1>
+    <img class="w-10" [src]="Monokuma.sprite" />
+  </div>
   <div class="flex items-center justify-center gap-4">
     <div class="hearts">{{ hearts() }}</div>
     <input
@@ -111,3 +115,11 @@
     </table>
   </div>
 </main>
+<footer class="absolute block bottom-0 w-full mb-4">
+  <div class="flex gap-2 w-full items-center justify-center">
+    <span>A game by Nathonius.</span>
+    <a class="underline hover:text-primary" href="https://github.com/nathonius/danganronpa-daily"
+      >View on GitHub.</a
+    >
+  </div>
+</footer>
