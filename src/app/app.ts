@@ -6,6 +6,7 @@ import { CHARACTER, CHARACTERS } from '../characters';
 import { DateTime } from 'luxon';
 import { Dialog } from './dialog/dialog';
 import { Monokuma } from '../characters/monokuma';
+import { Monomi } from '../characters/monomi';
 
 const MAX_GUESSES = 7;
 const ATTRIBUTE_CLASSES = {
@@ -103,6 +104,12 @@ export class App {
       Math.round(DateTime.now().startOf('year').plus({ day: 1 }).diffNow().as('days')),
     );
     const answerIndex = seed % this.CHARACTERS.length;
+
+    const now = DateTime.now();
+    if (now.year === 2026 && now.month === 4 && now.day === 18) {
+      return Monomi;
+    }
+
     return this.CHARACTERS[answerIndex];
   }
 
