@@ -53,11 +53,13 @@ export class App {
   public readonly characterQuery = signal<string>('');
   public readonly characterOptions = computed<CharacterData[]>(() => {
     const query = this.characterQuery();
+    const guesses = this.guesses();
+  
     if (query.trim() === '') {
       return [];
     }
     const results = this.CHARACTERS.filter((c) =>
-      c.name.toLowerCase().includes(query.toLowerCase()),
+      c.name.toLowerCase().includes(query.toLowerCase()) && !guesses.includes(c),
     );
     return results;
   });
