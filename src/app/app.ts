@@ -1,124 +1,14 @@
-import { Component, computed, ElementRef, signal, TemplateRef, viewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CharacterData, GAME } from '../characters/interfaces';
-import { Character } from './character/character';
-import { CHARACTER, CHARACTERS } from '../characters';
-import { DateTime } from 'luxon';
-import { Dialog } from './dialog/dialog';
-import { Monokuma } from '../characters/monokuma';
-import { Monomi } from '../characters/monomi';
-
-const MAX_GUESSES = 7;
-const ATTRIBUTE_CLASSES = {
-  correct: 'bg-success/50',
-  partial: 'bg-warning/50',
-  incorrect: 'bg-error/50',
-};
+import { Header } from './header/header';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [Character, Dialog],
-  templateUrl: './app.html',
+  templateUrl: 'app.html',
+  imports: [RouterOutlet, Header, Footer],
+  host: {
+    class: 'h-full flex flex-col gap-4 p-8 overflow-auto',
+  },
 })
-export class App {
-  public readonly Monokuma = Monokuma;
-  public readonly CHARACTERS = Object.values(CHARACTERS);
-  public readonly GAME = GAME;
-  public readonly genderModal = viewChild<ElementRef<HTMLDialogElement>>('gender');
-  public readonly answer: CharacterData = this.getAnswer();
-  public readonly guesses = signal<CharacterData[]>([]);
-  public readonly gameStatus = computed(() => {
-    const guesses = this.guesses();
-    if (guesses.some((g) => g.id === this.answer.id) && guesses.length <= MAX_GUESSES) {
-      return 'WIN';
-    } else if (guesses.length >= MAX_GUESSES) {
-      return 'LOSE';
-    }
-    return 'PLAYING';
-  });
-  public readonly hearts = computed(() => {
-    const guesses = this.guesses();
-    const heartCount = Math.max(0, MAX_GUESSES - guesses.length);
-    const emptyHeartCount = MAX_GUESSES - heartCount;
-    let hearts = ``;
-    for (let i = 0; i < heartCount; i += 1) {
-      hearts = `${hearts}❤️`;
-    }
-    for (let i = 0; i < emptyHeartCount; i += 1) {
-      hearts = `${hearts}🖤`;
-    }
-    console.log(hearts);
-    return hearts;
-  });
-  public readonly characterQuery = signal<string>('');
-  public readonly characterOptions = computed<CharacterData[]>(() => {
-    const query = this.characterQuery();
-    const guesses = this.guesses();
-  
-    if (query.trim() === '') {
-      return [];
-    }
-    const results = this.CHARACTERS.filter((c) =>
-      c.name.toLowerCase().includes(query.toLowerCase()) && !guesses.includes(c),
-    );
-    return results;
-  });
-
-  public guess(character: CHARACTER | null) {
-    if (character) {
-      const newGuesses = [...this.guesses()];
-      newGuesses.push(CHARACTERS[character]);
-      this.guesses.set(newGuesses);
-      this.characterQuery.set('');
-    }
-  }
-
-  public attributeClass(character: CharacterData, attribute: keyof CharacterData): string {
-    const value = character[attribute];
-    const targetValue = this.answer[attribute];
-    if (typeof value === 'boolean') {
-      return value === targetValue ? ATTRIBUTE_CLASSES.correct : ATTRIBUTE_CLASSES.incorrect;
-    } else if (typeof value === 'number' && typeof targetValue === 'number') {
-      const diff = Math.abs(value - targetValue);
-      return diff === 0
-        ? ATTRIBUTE_CLASSES.correct
-        : diff <= 10
-          ? ATTRIBUTE_CLASSES.partial
-          : ATTRIBUTE_CLASSES.incorrect;
-    } else {
-      return value === targetValue ? ATTRIBUTE_CLASSES.correct : ATTRIBUTE_CLASSES.incorrect;
-    }
-  }
-
-  public attributeIcon(value: number | null, attribute: keyof CharacterData): string {
-    const targetValue = this.answer[attribute];
-    if (typeof targetValue !== 'number' || typeof value !== 'number' || value === targetValue) {
-      return '';
-    } else if (value > targetValue) {
-      return '⬇️';
-    } else {
-      return '⬆️';
-    }
-  }
-
-  public getAnswer() {
-    const seed = Math.abs(
-      Math.round(DateTime.now().startOf('year').plus({ day: 1 }).diffNow().as('days')),
-    );
-    const answerIndex = seed % this.CHARACTERS.length;
-
-    const now = DateTime.now();
-    if (now.year === 2026 && now.month === 4 && now.day === 18) {
-      return Monomi;
-    }
-
-    return this.CHARACTERS[answerIndex];
-  }
-
-  public openGenderModal() {
-    const genderModal = this.genderModal();
-    if (genderModal) {
-      genderModal.nativeElement.showModal();
-    }
-  }
-}
+export class App {}
