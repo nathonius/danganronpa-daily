@@ -8,7 +8,7 @@ import { Dialog } from '../dialog/dialog';
 import { Monokuma } from '../../characters/monokuma';
 import { Monomi } from '../../characters/monomi';
 
-const MAX_GUESSES = 7;
+const MAX_GUESSES = 5;
 const ATTRIBUTE_CLASSES = {
   correct: 'bg-success/50',
   partial: 'bg-warning/50',
