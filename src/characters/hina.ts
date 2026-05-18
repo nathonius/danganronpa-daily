@@ -10,7 +10,7 @@ export const Hina: CharacterData = {
   gender: 'Female',
   heightCm: 160,
   name: 'Aoi Asahina',
-  sprite: 'hina.webp',
+  sprite: 'hina.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Swimming Pro',
   weightKg: 50,

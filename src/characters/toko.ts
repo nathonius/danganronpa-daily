@@ -10,7 +10,7 @@ export const Toko: CharacterData = {
   id: 'toko',
   link: 'https://danganronpa.fandom.com/wiki/Toko_Fukawa',
   name: 'Toko Fukawa',
-  sprite: 'toko.webp',
+  sprite: 'toko.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Writing Prodigy',
   weightKg: 47,

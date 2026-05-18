@@ -10,7 +10,7 @@ export const Ryoma: CharacterData = {
   id: 'ryoma',
   link: 'https://danganronpa.fandom.com/wiki/Ryoma_Hoshi',
   name: 'Ryoma Hoshi',
-  sprite: 'ryoma.webp',
+  sprite: 'ryoma.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Tennis Pro',
   weightKg: 40,

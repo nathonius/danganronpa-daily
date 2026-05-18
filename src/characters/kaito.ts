@@ -10,7 +10,7 @@ export const Kaito: CharacterData = {
   id: 'kaito',
   link: 'https://danganronpa.fandom.com/wiki/Kaito_Momota',
   name: 'Kaito Momota',
-  sprite: 'kaito.webp',
+  sprite: 'kaito.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Astronaut',
   weightKg: 74,

@@ -10,7 +10,7 @@ export const Byakuya: CharacterData = {
   gender: 'Male',
   heightCm: 185,
   name: 'Byakuya Togami',
-  sprite: 'byakuya.webp',
+  sprite: 'byakuya.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Affluent Progeny',
   weightKg: 68,

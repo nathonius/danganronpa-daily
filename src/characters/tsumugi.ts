@@ -10,7 +10,7 @@ export const Tsumugi: CharacterData = {
   id: 'tsumugi',
   link: 'https://danganronpa.fandom.com/wiki/Tsumugi_Shirogane',
   name: 'Tsumugi Shirogane',
-  sprite: 'tsumugi.webp',
+  sprite: 'tsumugi.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Cosplayer',
   weightKg: 51,

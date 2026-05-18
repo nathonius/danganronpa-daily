@@ -10,7 +10,7 @@ export const Sonia: CharacterData = {
   id: 'sonia',
   link: 'https://danganronpa.fandom.com/wiki/Sonia_Nevermind',
   name: 'Sonia Nevermind',
-  sprite: 'sonia.webp',
+  sprite: 'sonia.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Princess',
   weightKg: 50,

@@ -10,7 +10,7 @@ export const Gundham: CharacterData = {
   id: 'gundham',
   link: 'https://danganronpa.fandom.com/wiki/Gundham_Tanaka',
   name: 'Gundham Tanaka',
-  sprite: 'gundham.webp',
+  sprite: 'gundham.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Breeder',
   weightKg: 74,

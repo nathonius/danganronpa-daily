@@ -9,7 +9,7 @@ export const Hajime: CharacterData = {
   debutIn: 'Danganronpa2',
   blackened: false,
   ultimateTalent: 'Ultimate ???',
-  sprite: 'hajime.webp',
+  sprite: 'hajime.png',
   gender: 'Male',
   heightCm: 179,
   weightKg: 67,

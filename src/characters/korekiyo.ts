@@ -10,7 +10,7 @@ export const Korekiyo: CharacterData = {
   id: 'korekiyo',
   link: 'https://danganronpa.fandom.com/wiki/Korekiyo_Shinguji',
   name: 'Korekiyo Shinguji',
-  sprite: 'korekiyo.webp',
+  sprite: 'korekiyo.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Anthropologist',
   weightKg: 65,

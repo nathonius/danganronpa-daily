@@ -10,7 +10,7 @@ export const Kokichi: CharacterData = {
   id: 'kokichi',
   link: 'https://danganronpa.fandom.com/wiki/Kokichi_Oma',
   name: 'Kokichi Oma',
-  sprite: 'kokichi.webp',
+  sprite: 'kokichi.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Supreme Leader',
   weightKg: 44,

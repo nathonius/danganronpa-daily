@@ -10,7 +10,7 @@ export const Nekomaru: CharacterData = {
   id: 'nekomaru',
   link: 'https://danganronpa.fandom.com/wiki/Nekomaru_Nidai',
   name: 'Nekomaru Nidai',
-  sprite: 'nekomaru.webp',
+  sprite: 'nekomaru.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Team Manager',
   weightKg: 122,
