@@ -10,7 +10,7 @@ export const Monomi: CharacterData = {
   id: 'monomi',
   link: 'https://danganronpa.fandom.com/wiki/Monomi',
   name: 'Monomi',
-  sprite: 'monomi.webp',
+  sprite: 'monomi.png',
   status: 'Inactive',
   ultimateTalent: null,
   weightKg: null,

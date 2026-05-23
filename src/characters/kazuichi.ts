@@ -10,7 +10,7 @@ export const Kazuichi: CharacterData = {
   id: 'kazuichi',
   link: 'https://danganronpa.fandom.com/wiki/Kazuichi_Soda',
   name: 'Kazuichi Soda',
-  sprite: 'kazuichi.webp',
+  sprite: 'kazuichi.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Mechanic',
   weightKg: 64,

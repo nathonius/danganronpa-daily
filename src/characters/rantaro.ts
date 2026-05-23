@@ -10,7 +10,7 @@ export const Rantaro: CharacterData = {
   id: 'rantaro',
   link: 'https://danganronpa.fandom.com/wiki/Rantaro_Amami',
   name: 'Rantaro Amami',
-  sprite: 'rantaro.webp',
+  sprite: 'rantaro.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Survivor',
   weightKg: 62,

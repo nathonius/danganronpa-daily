@@ -10,7 +10,7 @@ export const Sayaka: CharacterData = {
   id: 'sayaka',
   link: 'https://danganronpa.fandom.com/wiki/Sayaka_Maizono',
   name: 'Sayaka Maizono',
-  sprite: 'sayaka.webp',
+  sprite: 'sayaka.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Pop Sensation',
   weightKg: 49,

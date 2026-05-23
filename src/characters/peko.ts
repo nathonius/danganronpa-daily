@@ -10,7 +10,7 @@ export const Peko: CharacterData = {
   id: 'peko',
   link: 'https://danganronpa.fandom.com/wiki/Peko_Pekoyama',
   name: 'Peko Pekoyama',
-  sprite: 'peko.webp',
+  sprite: 'peko.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Swordswoman',
   weightKg: 51,

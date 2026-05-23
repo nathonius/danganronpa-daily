@@ -10,7 +10,7 @@ export const Himiko: CharacterData = {
   id: 'himiko',
   link: 'https://danganronpa.fandom.com/wiki/Himiko_Yumeno',
   name: 'Himiko Yumeno',
-  sprite: 'himiko.webp',
+  sprite: 'himiko.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Magician',
   weightKg: 39,

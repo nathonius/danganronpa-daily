@@ -10,7 +10,7 @@ export const Kaede: CharacterData = {
   id: 'kaede',
   link: 'https://danganronpa.fandom.com/wiki/Kaede_Akamatsu',
   name: 'Kaede Akamatsu',
-  sprite: 'kaede.webp',
+  sprite: 'kaede.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Pianist',
   weightKg: 53,

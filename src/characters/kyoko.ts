@@ -10,7 +10,7 @@ export const Kyoko: CharacterData = {
   id: 'kyoko',
   link: 'https://danganronpa.fandom.com/wiki/Kyoko_Kirigiri',
   name: 'Kyoko Kirigiri',
-  sprite: 'kyoko.webp',
+  sprite: 'kyoko.png',
   status: 'Alive',
   ultimateTalent: 'Ultimate Detective',
   weightKg: 48,

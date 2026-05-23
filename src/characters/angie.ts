@@ -10,7 +10,7 @@ export const Angie: CharacterData = {
   id: 'angie',
   link: 'https://danganronpa.fandom.com/wiki/Angie_Yonaga',
   name: 'Angie Yonaga',
-  sprite: 'angie.webp',
+  sprite: 'angie.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Artist',
   weightKg: 41,

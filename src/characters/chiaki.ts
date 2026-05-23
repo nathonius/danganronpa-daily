@@ -10,7 +10,7 @@ export const Chiaki: CharacterData = {
   id: 'chiaki',
   link: 'https://danganronpa.fandom.com/wiki/Chiaki_Nanami_(Danganronpa_2)',
   name: 'Chiaki Nanami',
-  sprite: 'chiaki.webp',
+  sprite: 'chiaki.png',
   status: 'Inactive',
   ultimateTalent: 'Ultimate Gamer',
   weightKg: 46,

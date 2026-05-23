@@ -10,7 +10,7 @@ export const Mikan: CharacterData = {
   id: 'mikan',
   link: 'https://danganronpa.fandom.com/wiki/Mikan_Tsumiki',
   name: 'Mikan Tsumiki',
-  sprite: 'mikan.webp',
+  sprite: 'mikan.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Nurse',
   weightKg: 57,

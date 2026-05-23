@@ -10,7 +10,7 @@ export const Imposter: CharacterData = {
   id: 'imposter',
   link: 'https://danganronpa.fandom.com/wiki/Ultimate_Imposter',
   name: 'Byakuya Togami (Imposter)',
-  sprite: 'imposter.webp',
+  sprite: 'imposter.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Imposter',
   weightKg: null,

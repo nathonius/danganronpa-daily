@@ -10,7 +10,7 @@ export const Gonta: CharacterData = {
   id: 'gonta',
   link: 'https://danganronpa.fandom.com/wiki/Gonta_Gokuhara',
   name: 'Gonta Gokuhara',
-  sprite: 'gonta.webp',
+  sprite: 'gonta.png',
   status: 'Dead',
   ultimateTalent: 'Ultimate Entomologist',
   weightKg: 94,
