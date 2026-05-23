@@ -1,5 +1,5 @@
 <div class="flex items-center justify-center gap-4">
-  <div class="hearts">{{ hearts() }}</div>
+  <app-hearts [maximum]="MAX_GUESSES" [guessesMade]="guesses().length" />
   <input
     class="input"
     type="text"

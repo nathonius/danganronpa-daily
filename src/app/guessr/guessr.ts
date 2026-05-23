@@ -16,6 +16,7 @@ import { Dialog } from '../dialog/dialog';
 import { Monokuma } from '../../characters/monokuma';
 import { Monomi } from '../../characters/monomi';
 import { AnswerService, SEED_DATES } from '../../answer-service';
+import { Hearts } from '../hearts';
 
 const MAX_GUESSES = 5;
 const ATTRIBUTE_CLASSES = {
@@ -26,10 +27,11 @@ const ATTRIBUTE_CLASSES = {
 
 @Component({
   selector: 'app-guessr',
-  imports: [Character, Dialog],
+  imports: [Character, Dialog, Hearts],
   templateUrl: './guessr.html',
 })
 export class Guessr {
+  public readonly MAX_GUESSES = MAX_GUESSES;
   public readonly Monokuma = Monokuma;
   public readonly CHARACTERS = Object.values(CHARACTERS);
   public readonly GAME = GAME;
@@ -43,19 +45,6 @@ export class Guessr {
       return 'LOSE';
     }
     return 'PLAYING';
-  });
-  public readonly hearts = computed(() => {
-    const guesses = this.guesses();
-    const heartCount = Math.max(0, MAX_GUESSES - guesses.length);
-    const emptyHeartCount = MAX_GUESSES - heartCount;
-    let hearts = ``;
-    for (let i = 0; i < heartCount; i += 1) {
-      hearts = `${hearts}❤️`;
-    }
-    for (let i = 0; i < emptyHeartCount; i += 1) {
-      hearts = `${hearts}🖤`;
-    }
-    return hearts;
   });
   public readonly characterQuery = signal<string>('');
   public readonly characterOptions = computed<CharacterData[]>(() => {

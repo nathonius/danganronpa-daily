@@ -1,4 +1,27 @@
-<p>character-art works!</p>
-<app-pixelate [src]="Sakura.sprite" [pixelSize]="80" />
-<app-pixelate [src]="Celestia.sprite" [pixelSize]="80" />
-<app-pixelate [src]="Teruteru.sprite" [pixelSize]="10" />
+<div class="bg-base-200 rounded shadow">
+  <app-pixelate [src]="answer.sprite" [pixelSize]="pixelSize()" />
+</div>
+<app-hearts [maximum]="MAX_GUESSES" [guessesMade]="guesses().length" />
+<input
+  class="input"
+  type="text"
+  placeholder="Search characters"
+  [disabled]="gameStatus() !== 'PLAYING'"
+  [value]="characterQuery()"
+  (input)="characterQuery.set($event.target.value)"
+/>
+
+<app-dialog [open]="characterOptions().length > 0">
+  <input
+    class="input w-full"
+    type="text"
+    placeholder="Search characters"
+    [value]="characterQuery()"
+    (input)="characterQuery.set($event.target.value)"
+  />
+  <ul class="menu bg-base-200 rounded-box w-full max-h-100 overflow-scroll flex-nowrap">
+    @for (character of characterOptions(); track character.id) {
+      <app-character [data]="character" (selected)="guess(character.id)" />
+    }
+  </ul>
+</app-dialog>
