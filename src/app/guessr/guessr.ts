@@ -1,4 +1,12 @@
-import { Component, computed, ElementRef, signal, TemplateRef, viewChild } from '@angular/core';
+import {
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  signal,
+  TemplateRef,
+  viewChild,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CharacterData, GAME } from '../../characters/interfaces';
 import { Character } from '../character/character';
@@ -7,6 +15,7 @@ import { DateTime } from 'luxon';
 import { Dialog } from '../dialog/dialog';
 import { Monokuma } from '../../characters/monokuma';
 import { Monomi } from '../../characters/monomi';
+import { AnswerService, SEED_DATES } from '../../answer-service';
 
 const MAX_GUESSES = 5;
 const ATTRIBUTE_CLASSES = {
@@ -25,7 +34,6 @@ export class Guessr {
   public readonly CHARACTERS = Object.values(CHARACTERS);
   public readonly GAME = GAME;
   public readonly genderModal = viewChild<ElementRef<HTMLDialogElement>>('gender');
-  public readonly answer: CharacterData = this.getAnswer();
   public readonly guesses = signal<CharacterData[]>([]);
   public readonly gameStatus = computed(() => {
     const guesses = this.guesses();
@@ -47,7 +55,6 @@ export class Guessr {
     for (let i = 0; i < emptyHeartCount; i += 1) {
       hearts = `${hearts}🖤`;
     }
-    console.log(hearts);
     return hearts;
   });
   public readonly characterQuery = signal<string>('');
@@ -63,6 +70,8 @@ export class Guessr {
     );
     return results;
   });
+  public readonly answerService = inject(AnswerService);
+  public readonly answer: CharacterData = this.answerService.getAnswer(SEED_DATES.guessr);
 
   public guess(character: CHARACTER | null) {
     if (character) {
@@ -99,20 +108,6 @@ export class Guessr {
     } else {
       return '⬆️';
     }
-  }
-
-  public getAnswer() {
-    const seed = Math.abs(
-      Math.round(DateTime.now().startOf('year').plus({ day: 1 }).diffNow().as('days')),
-    );
-    const answerIndex = seed % this.CHARACTERS.length;
-
-    const now = DateTime.now();
-    if (now.year === 2026 && now.month === 4 && now.day === 18) {
-      return Monomi;
-    }
-
-    return this.CHARACTERS[answerIndex];
   }
 
   public openGenderModal() {

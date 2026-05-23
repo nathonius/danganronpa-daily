@@ -102,5 +102,6 @@ export const CHARACTERS: Record<string, CharacterData> = {
   [Tsumugi.id]: Tsumugi,
   [Yasuhiro.id]: Yasuhiro,
 } as const;
+export const ALL_CHARACTERS = Object.values(CHARACTERS);
 
 export type CHARACTER = keyof typeof CHARACTERS;
