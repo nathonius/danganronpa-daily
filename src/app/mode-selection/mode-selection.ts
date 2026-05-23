@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideSearch, LucideImage } from '@lucide/angular';
+import { LucideSearch, LucideImage, LucideNotepadText } from '@lucide/angular';
 
 @Component({
   selector: 'app-mode-selection',
