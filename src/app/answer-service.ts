@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DateTime } from 'luxon';
-import { ALL_CHARACTERS } from './characters';
+import { ALL_CHARACTERS } from '../characters';
 
 export const SEED_DATES: Record<'guessr' | 'characterArt', DateTime> = {
   guessr: DateTime.fromObject({ year: 2026, month: 1, day: 1 }),

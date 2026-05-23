@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { Pixelate } from './pixelate';
 import { Hearts } from '../hearts';
-import { AnswerService, SEED_DATES } from '../../answer-service';
+import { AnswerService, SEED_DATES } from '../answer-service';
 import { ALL_CHARACTERS, CHARACTER, CHARACTERS } from '../../characters';
 import { CharacterData } from '../../characters/interfaces';
 import { Dialog } from '../dialog/dialog';

@@ -15,7 +15,7 @@ import { DateTime } from 'luxon';
 import { Dialog } from '../dialog/dialog';
 import { Monokuma } from '../../characters/monokuma';
 import { Monomi } from '../../characters/monomi';
-import { AnswerService, SEED_DATES } from '../../answer-service';
+import { AnswerService, SEED_DATES } from '../answer-service';
 import { Hearts } from '../hearts';
 
 const MAX_GUESSES = 5;
