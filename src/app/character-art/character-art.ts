@@ -7,7 +7,7 @@ import { CharacterData } from '../../characters/interfaces';
 import { Dialog } from '../dialog/dialog';
 import { Character } from '../character/character';
 
-const PIXEL_STEPS = [90, 75, 55, 40, 30];
+const PIXEL_STEPS = [90, 75, 55, 35, 25];
 const MAX_GUESSES = 5;
 
 @Component({
