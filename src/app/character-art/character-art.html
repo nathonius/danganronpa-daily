@@ -13,7 +13,13 @@
   />
 </div>
 
-<app-dialog [open]="gameStatus() !== 'PLAYING'">
+<app-dialog [open]="gameStatus() !== 'PLAYING' && !hideGameOverDialog()">
+  <button
+    class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+    (click)="hideGameOverDialog.set(true)"
+  >
+    ✕
+  </button>
   <div class="flex flex-col justify-center items-center gap-4">
     @if (gameStatus() === 'LOSE') {
       <h1 class="text-xl">BAD END</h1>

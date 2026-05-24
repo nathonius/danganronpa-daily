@@ -17,6 +17,7 @@ import { Monokuma } from '../../characters/monokuma';
 import { Monomi } from '../../characters/monomi';
 import { AnswerService, SEED_DATES } from '../answer-service';
 import { Hearts } from '../hearts';
+import { datedKey, storageSignal } from '../storageSignal';
 
 const MAX_GUESSES = 5;
 const ATTRIBUTE_CLASSES = {
@@ -36,7 +37,15 @@ export class Guessr {
   public readonly CHARACTERS = Object.values(CHARACTERS);
   public readonly GAME = GAME;
   public readonly genderModal = viewChild<ElementRef<HTMLDialogElement>>('gender');
-  public readonly guesses = signal<CharacterData[]>([]);
+  public readonly guessIds = storageSignal<CHARACTER[]>(
+    datedKey('guessr.guesses'),
+    [],
+    (val) => Array.isArray(val) && val.every((v) => typeof v === 'string'),
+  );
+  public readonly guesses = computed(() => {
+    const guessIds = this.guessIds();
+    return guessIds.map((id) => CHARACTERS[id]);
+  });
   public readonly gameStatus = computed(() => {
     const guesses = this.guesses();
     if (guesses.some((g) => g.id === this.answer.id) && guesses.length <= MAX_GUESSES) {
@@ -61,12 +70,13 @@ export class Guessr {
   });
   public readonly answerService = inject(AnswerService);
   public readonly answer: CharacterData = this.answerService.getAnswer(SEED_DATES.guessr);
+  public readonly hideGameOverDialog = signal(false);
 
   public guess(character: CHARACTER | null) {
     if (character) {
-      const newGuesses = [...this.guesses()];
-      newGuesses.push(CHARACTERS[character]);
-      this.guesses.set(newGuesses);
+      const newGuesses = [...this.guessIds()];
+      newGuesses.push(character);
+      this.guessIds.set(newGuesses);
       this.characterQuery.set('');
     }
   }

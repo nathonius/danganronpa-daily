@@ -6,6 +6,7 @@ import { ALL_CHARACTERS, CHARACTER, CHARACTERS } from '../../characters';
 import { CharacterData } from '../../characters/interfaces';
 import { Dialog } from '../dialog/dialog';
 import { Character } from '../character/character';
+import { datedKey, storageSignal } from '../storageSignal';
 
 const PIXEL_STEPS = [90, 75, 55, 35, 25];
 const MAX_GUESSES = 5;
@@ -19,7 +20,15 @@ const MAX_GUESSES = 5;
 })
 export class CharacterArt {
   public readonly MAX_GUESSES = MAX_GUESSES;
-  public readonly guesses = signal<CharacterData[]>([]);
+  public readonly guessIds = storageSignal<CHARACTER[]>(
+    datedKey('character-art.guesses'),
+    [],
+    (val) => Array.isArray(val) && val.every((v) => typeof v === 'string'),
+  );
+  public readonly guesses = computed(() => {
+    const guessIds = this.guessIds();
+    return guessIds.map((id) => CHARACTERS[id]);
+  });
   public readonly pixelSize = computed(() => {
     const guessesMade = this.guesses().length;
     if (guessesMade >= MAX_GUESSES) {
@@ -51,12 +60,13 @@ export class CharacterArt {
     );
     return results;
   });
+  public readonly hideGameOverDialog = signal(false);
 
   public guess(character: CHARACTER | null) {
     if (character) {
-      const newGuesses = [...this.guesses()];
-      newGuesses.push(CHARACTERS[character]);
-      this.guesses.set(newGuesses);
+      const newGuesses = [...this.guessIds()];
+      newGuesses.push(character);
+      this.guessIds.set(newGuesses);
       this.characterQuery.set('');
     }
   }
