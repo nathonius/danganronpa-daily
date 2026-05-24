@@ -18,14 +18,17 @@ export class Pixelate {
   public readonly src = input.required<string>();
   public readonly pixelSize = input.required<number>();
   protected readonly imgData = signal<string | null>(null);
+  protected readonly widthPx = signal<number>(200);
+  protected readonly heightPx = signal<number>(200);
 
   public constructor() {
     effect(async () => {
       const src = this.src();
       const pixelSize = this.pixelSize();
-      this.imgData.set(null);
 
       const img = await Jimp.read(src);
+      this.widthPx.set(img.width);
+      this.heightPx.set(img.height);
       img.pixelate(pixelSize);
 
       this.imgData.set(await img.getBase64('image/png'));

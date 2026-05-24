@@ -1,4 +1,49 @@
-<p>character-art works!</p>
-<app-pixelate [src]="Sakura.sprite" [pixelSize]="80" />
-<app-pixelate [src]="Celestia.sprite" [pixelSize]="80" />
-<app-pixelate [src]="Teruteru.sprite" [pixelSize]="10" />
+<div class="flex flex-col items-center justify-center gap-2">
+  <div class="bg-base-200 rounded shadow p-4">
+    <app-pixelate [src]="answer.sprite" [pixelSize]="pixelSize()" />
+  </div>
+  <app-hearts size="2rem" [maximum]="MAX_GUESSES" [guessesMade]="guesses().length" />
+  <input
+    class="input"
+    type="text"
+    placeholder="Search characters"
+    [disabled]="gameStatus() !== 'PLAYING'"
+    [value]="characterQuery()"
+    (input)="characterQuery.set($event.target.value)"
+  />
+</div>
+
+<app-dialog [open]="gameStatus() !== 'PLAYING' && !hideGameOverDialog()">
+  <button
+    class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+    (click)="hideGameOverDialog.set(true)"
+  >
+    ✕
+  </button>
+  <div class="flex flex-col justify-center items-center gap-4">
+    @if (gameStatus() === 'LOSE') {
+      <h1 class="text-xl">BAD END</h1>
+    } @else if (gameStatus() === 'WIN') {
+      <h1 class="text-xl">Got it!</h1>
+    }
+    <p class="text-2xl">
+      Answer: <a [href]="answer.link" class="underline hover:text-primary">{{ answer.name }}</a>
+    </p>
+    <img [src]="answer.sprite" />
+  </div>
+</app-dialog>
+
+<app-dialog [open]="characterOptions().length > 0">
+  <input
+    class="input w-full"
+    type="text"
+    placeholder="Search characters"
+    [value]="characterQuery()"
+    (input)="characterQuery.set($event.target.value)"
+  />
+  <ul class="menu bg-base-200 rounded-box w-full max-h-100 overflow-scroll flex-nowrap">
+    @for (character of characterOptions(); track character.id) {
+      <app-character [data]="character" (selected)="guess(character.id)" />
+    }
+  </ul>
+</app-dialog>

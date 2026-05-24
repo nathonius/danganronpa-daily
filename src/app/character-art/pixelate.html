@@ -1,1 +1,16 @@
-<img [src]="imgData()" />
+@if (imgData()) {
+  <img
+    class="block"
+    [src]="imgData()"
+    [style.height.px]="heightPx()"
+    [style.width.px]="widthPx()"
+  />
+} @else {
+  <div
+    class="flex items-center justify-center"
+    [style.height.px]="heightPx()"
+    [style.width.px]="widthPx()"
+  >
+    <span class="loading loading-spinner loading-xl"></span>
+  </div>
+}

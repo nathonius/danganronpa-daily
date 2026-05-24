@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AnswerService } from './answer-service';
+import { AnswerService } from '../answer-service';
 import { DateTime } from 'luxon';
-import { ALL_CHARACTERS } from './characters';
+import { ALL_CHARACTERS } from '../characters';
 
 describe('AnswerService', () => {
   let service: AnswerService;
