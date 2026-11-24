@@ -9,7 +9,7 @@ export const Monokuma: CharacterData = {
   debutIn: 'Danganronpa',
   blackened: false,
   ultimateTalent: null,
-  sprite: 'monokuma.png',
+  sprite: [{ path: 'monokuma/monokuma.png', default: true }],
   gender: 'Male',
   heightCm: 75,
   weightKg: null,

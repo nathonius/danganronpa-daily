@@ -10,7 +10,7 @@ export const Hiyoko: CharacterData = {
   id: 'hiyoko',
   link: 'https://danganronpa.fandom.com/wiki/Hiyoko_Saionji',
   name: 'Hiyoko Saionji',
-  sprite: 'hiyoko.png',
+  sprite: [{ path: 'hiyoko/hiyoko.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Traditional Dancer',
   weightKg: 31,

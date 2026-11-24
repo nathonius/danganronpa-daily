@@ -10,7 +10,7 @@ export const Mukuro: CharacterData = {
   id: 'mukuro',
   link: 'https://danganronpa.fandom.com/wiki/Mukuro_Ikusaba',
   name: 'Mukuro Ikusaba',
-  sprite: 'mukuro.png',
+  sprite: [{ path: 'mukuro/mukuro.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Soldier',
   weightKg: 44,

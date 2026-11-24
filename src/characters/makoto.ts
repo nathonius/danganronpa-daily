@@ -10,7 +10,7 @@ export const Makoto: CharacterData = {
   gender: 'Male',
   heightCm: 160,
   name: 'Makoto Naegi',
-  sprite: 'makoto.png',
+  sprite: [{ path: 'makoto/makoto.png', default: true }],
   status: 'Alive',
   ultimateTalent: 'Ultimate Lucky Student',
   weightKg: 52,

@@ -10,7 +10,7 @@ export const Fuyuhiko: CharacterData = {
   id: 'fuyuhiko',
   link: 'https://danganronpa.fandom.com/wiki/Fuyuhiko_Kuzuryu',
   name: 'Fuyuhiko Kuzuryu',
-  sprite: 'fuyuhiko.png',
+  sprite: [{ path: 'fuyuhiko/fuyuhiko.png', default: true }],
   status: 'Alive',
   ultimateTalent: 'Ultimate Yakuza',
   weightKg: 43,

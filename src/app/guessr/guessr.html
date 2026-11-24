@@ -26,7 +26,7 @@
     <p class="text-2xl">
       Answer: <a [href]="answer.link" class="underline hover:text-primary">{{ answer.name }}</a>
     </p>
-    <img [src]="answer.sprite" />
+    <img [src]="defaultSprite(answer)" />
   </div>
 </app-dialog>
 
@@ -83,7 +83,7 @@
       @for (character of guesses(); track character.id) {
         <tr>
           <td [className]="attributeClass(character, 'sprite')">
-            <img [src]="character.sprite" class="w-20 h-20" />
+            <img [src]="defaultSprite(character)" class="w-20 h-20" />
           </td>
           <td [className]="attributeClass(character, 'name')">
             <a class="underline hover:text-primary" [href]="character.link" target="_blank">{{

@@ -10,7 +10,7 @@ export const Mondo: CharacterData = {
   id: 'mondo',
   link: 'https://danganronpa.fandom.com/wiki/Mondo_Owada',
   name: 'Mondo Owada',
-  sprite: 'mondo.png',
+  sprite: [{ path: 'mondo/mondo.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Biker Gang Leader',
   weightKg: 76,

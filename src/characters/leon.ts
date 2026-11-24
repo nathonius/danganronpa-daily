@@ -10,7 +10,7 @@ export const Leon: CharacterData = {
   id: 'leon',
   link: 'https://danganronpa.fandom.com/wiki/Leon_Kuwata',
   name: 'Leon Kuwata',
-  sprite: 'leon.png',
+  sprite: [{ path: 'leon/leon.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Baseball Star',
   weightKg: 67,

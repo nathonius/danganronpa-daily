@@ -10,7 +10,7 @@ export const Teruteru: CharacterData = {
   id: 'teruteru',
   link: 'https://danganronpa.fandom.com/wiki/Teruteru_Hanamura',
   name: 'Teruteru Hanamura',
-  sprite: 'teruteru.png',
+  sprite: [{ path: 'teruteru/teruteru.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Cook',
   weightKg: 69,

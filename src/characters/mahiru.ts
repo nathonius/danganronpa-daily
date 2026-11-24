@@ -10,7 +10,7 @@ export const Mahiru: CharacterData = {
   id: 'mahiru',
   link: 'https://danganronpa.fandom.com/wiki/Mahiru_Koizumi',
   name: 'Mahiru Koizumi',
-  sprite: 'mahiru.png',
+  sprite: [{ path: 'mahiru/mahiru.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Photographer',
   weightKg: 46,

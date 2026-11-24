@@ -10,7 +10,7 @@ export const Miu: CharacterData = {
   id: 'miu',
   link: 'https://danganronpa.fandom.com/wiki/Miu_Iruma',
   name: 'Miu Iruma',
-  sprite: 'miu.png',
+  sprite: [{ path: 'miu/miu.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Inventor',
   weightKg: 56,

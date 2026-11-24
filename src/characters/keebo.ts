@@ -10,7 +10,7 @@ export const Keebo: CharacterData = {
   id: 'keebo',
   link: 'https://danganronpa.fandom.com/wiki/K1-B0',
   name: 'K1-B0',
-  sprite: 'keebo.png',
+  sprite: [{ path: 'keebo/keebo.png', default: true }],
   status: 'Inactive',
   ultimateTalent: 'Ultimate Robot',
   weightKg: 89,

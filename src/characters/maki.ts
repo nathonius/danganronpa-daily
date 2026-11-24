@@ -10,7 +10,7 @@ export const Maki: CharacterData = {
   id: 'maki',
   link: 'https://danganronpa.fandom.com/wiki/Maki_Harukawa',
   name: 'Maki Harukawa',
-  sprite: 'maki.png',
+  sprite: [{ path: 'maki/maki.png', default: true }],
   status: 'Alive',
   ultimateTalent: 'Ultimate Assassin',
   weightKg: 44,

@@ -10,7 +10,7 @@ export const Junko: CharacterData = {
   id: 'junko',
   link: 'https://danganronpa.fandom.com/wiki/Junko_Enoshima',
   name: 'Junko Enoshima',
-  sprite: 'junko.png',
+  sprite: [{ path: 'junko/junko.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Fashionista',
   weightKg: 45,

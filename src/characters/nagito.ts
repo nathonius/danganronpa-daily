@@ -9,7 +9,7 @@ export const Nagito: CharacterData = {
   debutIn: 'Danganronpa2',
   blackened: false,
   ultimateTalent: 'Ultimate Lucky Student',
-  sprite: 'nagito.png',
+  sprite: [{ path: 'nagito/nagito.png', default: true }],
   gender: 'Male',
   heightCm: 180,
   weightKg: 65,

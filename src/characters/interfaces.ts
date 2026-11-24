@@ -27,6 +27,11 @@ export const CHARACTER_STATUS = {
 } as const;
 export type CHARACTER_STATUS = keyof typeof CHARACTER_STATUS;
 
+export interface CharacterSprite {
+  path: string;
+  default: boolean;
+}
+
 export interface CharacterData {
   id: string;
   name: string;
@@ -35,7 +40,7 @@ export interface CharacterData {
   ancestry: ANCESTRY;
   affiliations: string[];
   blackened: boolean;
-  sprite: string;
+  sprite: CharacterSprite[];
   gender: GENDER;
   heightCm: number | null;
   weightKg: number | null;

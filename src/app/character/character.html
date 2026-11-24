@@ -1,7 +1,7 @@
 @let _data = data();
 <li>
   <button (click)="selected.emit()">
-    <img class="h-20" [src]="_data.sprite" />
+    <img class="h-20" [src]="defaultSprite()" />
     <h3>{{ _data.name }}</h3>
   </button>
 </li>

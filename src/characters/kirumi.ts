@@ -10,7 +10,7 @@ export const Kirumi: CharacterData = {
   id: 'kirumi',
   link: 'https://danganronpa.fandom.com/wiki/Kirumi_Tojo',
   name: 'Kirumi Tojo',
-  sprite: 'kirumi.png',
+  sprite: [{ path: 'kirumi/kirumi.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Maid',
   weightKg: 52,

@@ -10,7 +10,7 @@ export const Celestia: CharacterData = {
   gender: 'Female',
   heightCm: 164,
   name: 'Celestia Ludenberg',
-  sprite: 'celestia.png',
+  sprite: [{ path: 'celestia/celestia.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Gambler',
   weightKg: 46,

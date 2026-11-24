@@ -10,7 +10,7 @@ export const Chihiro: CharacterData = {
   gender: 'Male',
   heightCm: 148,
   name: 'Chihiro Fujisaki',
-  sprite: 'chihiro.png',
+  sprite: [{ path: 'chihiro/chihiro.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Programmer',
   weightKg: 41,

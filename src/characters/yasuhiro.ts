@@ -10,7 +10,7 @@ export const Yasuhiro: CharacterData = {
   id: 'yasuhiro',
   link: 'https://danganronpa.fandom.com/wiki/Yasuhiro_Hagakure',
   name: 'Yasuhiro Hagakure',
-  sprite: 'yasuhiro.png',
+  sprite: [{ path: 'yasuhiro/yasuhiro.png', default: true }],
   status: 'Alive',
   ultimateTalent: 'Ultimate Clairvoyant',
   weightKg: 71,

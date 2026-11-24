@@ -10,7 +10,7 @@ export const Hifumi: CharacterData = {
   heightCm: 170,
   id: 'hifumi',
   name: 'Hifumi Yamada',
-  sprite: 'hifumi.png',
+  sprite: [{ path: 'hifumi/hifumi.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Fanfic Creator',
   weightKg: 155,

@@ -10,7 +10,7 @@ export const Akane: CharacterData = {
   id: 'akane',
   link: 'https://danganronpa.fandom.com/wiki/Akane_Owari',
   name: 'Akane Owari',
-  sprite: 'akane.png',
+  sprite: [{ path: 'akane/akane.png', default: true }],
   status: 'Alive',
   ultimateTalent: 'Ultimate Gymnast',
   weightKg: 56,

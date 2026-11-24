@@ -10,7 +10,7 @@ export const Taka: CharacterData = {
   id: 'taka',
   link: 'https://danganronpa.fandom.com/wiki/Kiyotaka_Ishimaru',
   name: 'Kiyotaka Ishimaru',
-  sprite: 'taka.png',
+  sprite: [{ path: 'taka/taka.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Moral Compass',
   weightKg: 66,

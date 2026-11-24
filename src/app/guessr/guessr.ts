@@ -115,4 +115,8 @@ export class Guessr {
       genderModal.nativeElement.showModal();
     }
   }
+
+  public defaultSprite(answer: CharacterData): string {
+    return answer.sprite.find((s) => s.default === true)?.path ?? '';
+  }
 }

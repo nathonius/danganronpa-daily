@@ -10,7 +10,7 @@ export const Sakura: CharacterData = {
   id: 'sakura',
   link: 'https://danganronpa.fandom.com/wiki/Sakura_Ogami',
   name: 'Sakura Ogami',
-  sprite: 'sakura.png',
+  sprite: [{ path: 'sakura/sakura.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Martial Artist',
   weightKg: 99,

@@ -13,4 +13,5 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
   protected readonly Monokuma = Monokuma;
+  protected readonly sprite = this.Monokuma.sprite.find((s) => s.default === true)?.path ?? '';
 }

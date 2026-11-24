@@ -10,7 +10,7 @@ export const Ibuki: CharacterData = {
   id: 'ibuki',
   link: 'https://danganronpa.fandom.com/wiki/Ibuki_Mioda',
   name: 'Ibuki Mioda',
-  sprite: 'ibuki.png',
+  sprite: [{ path: 'ibuki/ibuki.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Musician',
   weightKg: 42,

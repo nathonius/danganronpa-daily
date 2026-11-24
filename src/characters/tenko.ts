@@ -10,7 +10,7 @@ export const Tenko: CharacterData = {
   id: 'tenko',
   link: 'https://danganronpa.fandom.com/wiki/Tenko_Chabashira',
   name: 'Tenko Chabashira',
-  sprite: 'tenko.png',
+  sprite: [{ path: 'tenko/tenko.png', default: true }],
   status: 'Dead',
   ultimateTalent: 'Ultimate Aikido Master',
   weightKg: 52,

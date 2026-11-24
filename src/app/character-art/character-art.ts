@@ -70,4 +70,8 @@ export class CharacterArt {
       this.characterQuery.set('');
     }
   }
+
+  public defaultSprite(answer: CharacterData): string {
+    return answer.sprite.find((s) => s.default === true)?.path ?? '';
+  }
 }

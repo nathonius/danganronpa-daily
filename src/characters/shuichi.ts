@@ -10,7 +10,7 @@ export const Shuichi: CharacterData = {
   id: 'shuichi',
   link: 'https://danganronpa.fandom.com/wiki/Shuichi_Saihara',
   name: 'Shuichi Saihara',
-  sprite: 'shuichi.png',
+  sprite: [{ path: 'shuichi/shuichi.png', default: true }],
   status: 'Alive',
   ultimateTalent: 'Ultimate Detective',
   weightKg: 58,
