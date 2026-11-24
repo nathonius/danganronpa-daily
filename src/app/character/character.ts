@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  output,
+} from '@angular/core';
 import { CharacterData } from '../../characters/interfaces';
 
 @Component({
@@ -9,6 +16,7 @@ import { CharacterData } from '../../characters/interfaces';
 })
 export class Character {
   public readonly data = input.required<CharacterData>();
+  public readonly showSprite = input(true, { transform: booleanAttribute });
   public readonly selected = output();
   public readonly defaultSprite = computed(() => {
     const data = this.data();

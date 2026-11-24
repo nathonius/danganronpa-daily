@@ -11,6 +11,20 @@
     [value]="characterQuery()"
     (input)="characterQuery.set($event.target.value)"
   />
+  <ul>
+    @for (guess of guesses(); track guess.id) {
+      <li>
+        <span>
+          @if (guess.id === answer.id) {
+            ⭐
+          } @else {
+            💀
+          }
+        </span>
+        <span>{{ guess.name }}</span>
+      </li>
+    }
+  </ul>
 </div>
 
 <app-dialog [open]="gameStatus() !== 'PLAYING' && !hideGameOverDialog()">
@@ -43,7 +57,7 @@
   />
   <ul class="menu bg-base-200 rounded-box w-full max-h-100 overflow-scroll flex-nowrap">
     @for (character of characterOptions(); track character.id) {
-      <app-character [data]="character" (selected)="guess(character.id)" />
+      <app-character showSprite="false" [data]="character" (selected)="guess(character.id)" />
     }
   </ul>
 </app-dialog>
